@@ -7,12 +7,6 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
-  // "eslint.validate": [
-  //     "javascript",
-  //     "typescript",
-  //     "javascriptreact",
-  //     "typescriptreact"
-  // ],
   "editor.tabSize": 2,
   "editor.insertSpaces": false,
   "editor.detectIndentation": false,
