@@ -1,6 +1,7 @@
 import { AppRegistry, LogBox } from "react-native"
-import App from "./src/App"
+
 import { name as appName } from "./app.json"
+import App from "./src/App"
 
 if (process.env.NODE_ENV === "test") {
   LogBox.ignoreAllLogs() // suppress all logs in tests
