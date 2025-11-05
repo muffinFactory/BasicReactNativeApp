@@ -11,12 +11,5 @@
   "editor.insertSpaces": false,
   "editor.detectIndentation": false,
   //
-  "search-node-modules.path": "node_modules",
-  "terminal.integrated.profiles.osx": {
-    "zsh with nvm use": {
-      "path": "zsh",
-      "args": ["-i", "-c", "cd ${workspaceFolder} && nvm use && exec zsh"]
-    }
-  },
-  "terminal.integrated.defaultProfile.osx": "zsh with nvm use"
+  "search-node-modules.path": "node_modules"
 }
