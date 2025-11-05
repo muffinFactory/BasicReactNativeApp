@@ -1,15 +1,18 @@
-import { Text } from "react-native"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
-import { BaseScreen } from "@components/layout"
-import { MainStackScreen } from "@lib/routes/type"
+import MainTabScreen from "./Main"
+import ProfileTabScreen from "./Profile"
+import { TabsParamList } from "./type"
 
-// TODO Tab Navigator here
-const HomeScreen = ({}: MainStackScreen<"Home">) => {
+const Tab = createBottomTabNavigator<TabsParamList>()
+
+const TabsNavigator = () => {
   return (
-    <BaseScreen>
-      <Text>HomeScreen</Text>
-    </BaseScreen>
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen name="Home" component={MainTabScreen} />
+      <Tab.Screen name="Profile" component={ProfileTabScreen} />
+    </Tab.Navigator>
   )
 }
 
-export default HomeScreen
+export default TabsNavigator
