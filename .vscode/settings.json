@@ -7,6 +7,19 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
+  // Exclude some third party library autoimports
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "**/node_modules/react-native-reanimated/lib/typescript/Animated",
+    "**/node_modules/react-native-reanimated/lib/**",
+    "**/node_modules/@tanstack/react-query/build/legacy/**",
+    "**/node_modules/@tanstack/react-query/build/legacy*"
+  ],
+  "javascript.preferences.autoImportFileExcludePatterns": [
+    "**/node_modules/react-native-reanimated/lib/typescript/Animated",
+    "**/node_modules/react-native-reanimated/lib/**",
+    "**/node_modules/@tanstack/react-query/build/legacy/**",
+    "**/node_modules/@tanstack/react-query/build/legacy*"
+  ],
   "editor.tabSize": 2,
   "editor.insertSpaces": false,
   "editor.detectIndentation": false,
