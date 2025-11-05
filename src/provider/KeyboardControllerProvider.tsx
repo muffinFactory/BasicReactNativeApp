@@ -6,6 +6,8 @@ type KeyboardControllerProviderProps = {
   children: React.ReactNode
 }
 
-export const KeyboardControllerProvider = ({ children }: KeyboardControllerProviderProps) => {
+const KeyboardControllerProvider = ({ children }: KeyboardControllerProviderProps) => {
   return <KeyboardProvider>{children}</KeyboardProvider>
 }
+
+export default KeyboardControllerProvider

@@ -18,13 +18,7 @@ type ThemeContextType = {
 
 export const AppThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
-export const AppThemeProvider = ({
-  children,
-  initialTheme = "light"
-}: {
-  children: ReactNode
-  initialTheme?: string
-}) => {
+const AppThemeProvider = ({ children, initialTheme = "light" }: { children: ReactNode; initialTheme?: string }) => {
   const [themeName, setThemeName] = useState(initialTheme)
 
   const theme = availableAppThemes[themeName] || availableAppThemes.light
@@ -38,3 +32,5 @@ export const AppThemeProvider = ({
     </AppThemeContext.Provider>
   )
 }
+
+export default AppThemeProvider
