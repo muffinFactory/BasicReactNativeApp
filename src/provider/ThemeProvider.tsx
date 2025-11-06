@@ -1,27 +1,31 @@
 import { createContext, ReactNode, useState } from "react"
-import { StatusBar } from "react-native"
+import { StatusBar, useColorScheme } from "react-native"
 
-import { AppTheme } from "@ui/theme"
+import { LightAppTheme } from "@ui/theme"
 import { ColorScheme } from "@ui/Theme/type"
 
-const availableAppThemes: Record<string, ColorScheme> = {
-  light: AppTheme,
-  // Later-Do: different theme later
-  dark: AppTheme
+type AppThemeType = "light" | "dark"
+
+const availableAppThemes: Record<AppThemeType, ColorScheme> = {
+  light: LightAppTheme,
+  // Later-Do: different theme later?
+  dark: LightAppTheme
 }
 
 type ThemeContextType = {
   theme: ColorScheme
-  setThemeName: (name: string) => void
+  setThemeName: (name: AppThemeType) => void
   themeName: string
 }
 
 export const AppThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
-const AppThemeProvider = ({ children, initialTheme = "light" }: { children: ReactNode; initialTheme?: string }) => {
-  const [themeName, setThemeName] = useState(initialTheme)
-
+const AppThemeProvider = ({ children, initialTheme }: { children: ReactNode; initialTheme?: AppThemeType }) => {
+  const colorScheme = useColorScheme()
+  const [themeName, setThemeName] = useState<AppThemeType>(() => initialTheme || colorScheme || "dark")
   const theme = availableAppThemes[themeName] || availableAppThemes.light
+
+  // TODO Storage check initialization
 
   return (
     <AppThemeContext.Provider value={{ theme, setThemeName, themeName }}>

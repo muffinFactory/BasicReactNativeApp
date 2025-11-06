@@ -4,8 +4,8 @@ import { MainStackNavigation } from "@lib/routes/type"
 
 // TODO Define the tab routes later
 export type TabsParamList = {
-  Home: undefined
-  Profile: undefined
+  HomeTab: undefined
+  ProfileTab: undefined
 }
 
 export type HomeTabScreen<RouteName extends keyof TabsParamList> = {
