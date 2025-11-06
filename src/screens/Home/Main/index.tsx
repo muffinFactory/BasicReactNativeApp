@@ -4,7 +4,7 @@ import { BaseScreen } from "@components/layout"
 
 import { HomeTabScreen } from "../type"
 
-const MainTabScreen = ({}: HomeTabScreen<"Home">) => {
+const MainTabScreen = ({}: HomeTabScreen<"HomeTab">) => {
   return (
     <BaseScreen>
       <Text style={{ alignSelf: "center", marginTop: "10%" }}>HomeScreen</Text>

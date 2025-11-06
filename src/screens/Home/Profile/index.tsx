@@ -4,10 +4,11 @@ import { BaseScreen } from "@components/layout"
 
 import { HomeTabScreen } from "../type"
 
-const ProfileTabScreen = ({}: HomeTabScreen<"Profile">) => {
+const ProfileTabScreen = ({ navigation }: HomeTabScreen<"ProfileTab">) => {
   return (
     <BaseScreen>
       <Text style={{ alignSelf: "center", marginTop: "10%" }}>Profile</Text>
+      <Text onPress={() => navigation.navigate("ErrorPage")}>Test</Text>
     </BaseScreen>
   )
 }

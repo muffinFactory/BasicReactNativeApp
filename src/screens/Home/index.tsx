@@ -8,9 +8,9 @@ const Tab = createBottomTabNavigator<TabsParamList>()
 
 const TabsNavigator = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
-      <Tab.Screen name="Home" component={MainTabScreen} />
-      <Tab.Screen name="Profile" component={ProfileTabScreen} />
+    <Tab.Navigator initialRouteName="HomeTab" screenOptions={{ headerShown: false }}>
+      <Tab.Screen name="HomeTab" component={MainTabScreen} />
+      <Tab.Screen name="ProfileTab" component={ProfileTabScreen} />
     </Tab.Navigator>
   )
 }
