@@ -1,9 +1,9 @@
-import MainNavigator from "./navigation/MainNavigator"
+import AppNavigation from "./navigation"
 import AppProvider from "./provider"
 
 const App = () => (
   <AppProvider>
-    <MainNavigator />
+    <AppNavigation />
   </AppProvider>
 )
 

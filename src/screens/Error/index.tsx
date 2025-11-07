@@ -1,10 +1,10 @@
 import { Text } from "react-native"
 
 import { BaseScreen } from "@components/layout"
-import { MainStackScreen } from "@lib/routes/type"
+import { AuthStackScreen, MainStackScreen } from "@lib/routes/type"
 
 // Generic Error Screen
-const ErrorScreen = ({}: MainStackScreen<"ErrorPage">) => {
+const ErrorScreen = ({}: MainStackScreen<"ErrorPage"> | AuthStackScreen<"ErrorPage">) => {
   return (
     <BaseScreen>
       <Text style={{ alignSelf: "center", marginTop: "10%" }}>

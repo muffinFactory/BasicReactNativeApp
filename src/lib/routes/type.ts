@@ -1,12 +1,6 @@
 import { RouteProp } from "@react-navigation/native"
 import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 
-export type MainStackNavigation = NativeStackNavigationProp<MainNavigatorStack>
-export type MainStackScreen<RouteName extends keyof MainNavigatorStack> = {
-  route: RouteProp<MainNavigatorStack, RouteName>
-  navigation: MainStackNavigation
-}
-
 type CommonNavigation = {
   NotFound: undefined
   ErrorPage: undefined
@@ -15,8 +9,18 @@ type CommonNavigation = {
 export type MainNavigatorStack = CommonNavigation & {
   Home: undefined
 }
+export type MainStackNavigation = NativeStackNavigationProp<MainNavigatorStack>
+export type MainStackScreen<RouteName extends keyof MainNavigatorStack> = {
+  route: RouteProp<MainNavigatorStack, RouteName>
+  navigation: MainStackNavigation
+}
 
 export type AuthNavigationStack = CommonNavigation & {
-  SignIn: undefined
+  Login: undefined
   Register: undefined
+}
+export type AuthStackNavigation = NativeStackNavigationProp<AuthNavigationStack>
+export type AuthStackScreen<RouteName extends keyof AuthNavigationStack> = {
+  route: RouteProp<AuthNavigationStack, RouteName>
+  navigation: AuthStackNavigation
 }
