@@ -1,4 +1,5 @@
 import { AppRegistry, LogBox } from "react-native"
+import "./global.css"
 
 import { name as appName } from "./app.json"
 import App from "./src/App"

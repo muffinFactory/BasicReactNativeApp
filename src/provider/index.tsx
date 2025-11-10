@@ -1,10 +1,11 @@
 import React, { ReactNode } from "react"
 
+import { SafeAreaProvider } from "react-native-safe-area-context"
+
 import KeyboardControllerProvider from "./KeyboardControllerProvider"
 import NavigationProvider from "./NavigationProvider"
 import QueryClientProvider from "./QueryClientProvider"
 import ReduxProvider from "./ReduxProvider"
-import SafeAreaProvider from "./SafeAreaProvider"
 import AppThemeProvider from "./ThemeProvider"
 
 type AppProviderProps = {
@@ -12,17 +13,20 @@ type AppProviderProps = {
 }
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => (
-  <ReduxProvider>
-    <AppThemeProvider>
-      <QueryClientProvider>
-        <SafeAreaProvider>
+  <SafeAreaProvider>
+    <ReduxProvider>
+      <AppThemeProvider>
+        <QueryClientProvider>
           <KeyboardControllerProvider>
-            <NavigationProvider>{children}</NavigationProvider>
+            <NavigationProvider>
+              {/*  */}
+              {children}
+            </NavigationProvider>
           </KeyboardControllerProvider>
-        </SafeAreaProvider>
-      </QueryClientProvider>
-    </AppThemeProvider>
-  </ReduxProvider>
+        </QueryClientProvider>
+      </AppThemeProvider>
+    </ReduxProvider>
+  </SafeAreaProvider>
 )
 
 export default AppProvider
