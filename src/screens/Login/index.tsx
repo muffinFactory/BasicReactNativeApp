@@ -1,8 +1,10 @@
-import { Button, SafeAreaView, Text, TextInput, View } from "react-native"
+import { Text, TextInput, TouchableOpacity, View } from "react-native"
 
 import { Controller, useForm } from "react-hook-form"
 import { KeyboardAvoidingView } from "react-native-keyboard-controller"
+import { SafeAreaView } from "react-native-safe-area-context"
 
+import LogoIcon from "@assets/svg/logo"
 import { BaseScreen } from "@components/layout"
 import DismissKeyboardView from "@components/layout/DismissKeyboardView"
 import { AuthStackScreen } from "@lib/routes/type"
@@ -27,10 +29,13 @@ const LoginScreen = ({}: AuthStackScreen<"Login">) => {
         {/* Title */}
         <View className="absolute top-[10%] left-0 right-0">
           <Text className="self-center mt-[15%] text-xl font-semibold">Login Form</Text>
+          <View className="pt-10">
+            <LogoIcon />
+          </View>
         </View>
 
         {/* Background area */}
-        <View className="flex-1 bg-black/5">
+        <View className="flex-1">
           <View className="flex-1" />
 
           <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={50}>
@@ -63,7 +68,12 @@ const LoginScreen = ({}: AuthStackScreen<"Login">) => {
                 )}
               />
 
-              <Button title="Login" onPress={handleSubmit(onSubmit)} />
+              <TouchableOpacity
+                className="bg-blue-500 rounded-lg py-3 active:bg-blue-600"
+                onPress={handleSubmit(onSubmit)}
+              >
+                <Text className="text-white text-center font-semibold text-base">Login</Text>
+              </TouchableOpacity>
             </View>
           </KeyboardAvoidingView>
         </View>
