@@ -27,6 +27,6 @@
     "outDir": "dist",
     "declaration": true
   },
-  "include": ["src/**/*", "nativewind-env.d.ts"],
+  "include": ["src/**/*", "assets/**/*", "nativewind-env.d.ts"],
   "exclude": ["node_modules"]
 }
