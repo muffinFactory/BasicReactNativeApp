@@ -4,7 +4,7 @@ module.exports = {
     "@react-native",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:react-native-a11y/ios",
+    // "plugin:react-native-a11y/ios", // accessibility plugin, useful for webdev
     "prettier"
   ],
   plugins: ["import", "prettier"],
